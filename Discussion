@@ -1,0 +1,29 @@
+# Discussion #
+
+Galeras and Popocatepetl are two extremely active volcanos. SO2 gas emmisions can hold value in predicting volcanic eruptions and health risk of SO2 in the future. Map of Galeras,Volcano in Colombia and Popocatepetl, Volcano in Mexico to show the location where both SO2 trends and volcanic eruptions may be effecting.
+
+```{r}
+world_map <- map_data("world")
+point_data <- data.frame(
+    lon = c(-77.36, -98.62),
+    lat = c(1.22, 19.02)
+ )
+
+ggplot() +
+    geom_polygon(data = world_map, aes(x = long, y = lat, group = group), fill = "lightblue") +
+    geom_point(data = point_data, aes(x = lon, y = lat), color = "red", size = 3)
+
+```
+
+## Galeras Trends
+
+Galeras' Daily Mean of SO2 trend is remarkable throughout the six years because it shows a huge peak in SO2 gas emissions around 2008 and subsiding to lower SO2. During 2008 there was a volcanic eruption and this trend in the graph shows that clearly. This trend can be useful in predicting volcanic eruptions for Galeras in the future. We see in the graph that the normal SO2 emmision trend is low for Galeras, therefore if we start to see a increase in SO2 all of a sudden in the future, this could be a sign of a volcanic eruption. This also could be a good proxy for other volcanos that exibit behavior like Galeras.
+
+Galeras' Yearly trend of SO2 is expected, 2008 and 2009 had the highest amount of SO2 emissions due to the eruption at that point. The total amount of SO2 for the full six years was lower than Popocatepetl which could be explained by the idea that Popocatepetl is more active or due to the histogram showing Galeras had less amount of data recorded. Either way, it is good that there is multiple ways to predict eruptions from Galeras including seismic data.
+
+## Popocatepetl Trends
+Popocatepetl's Daily Mean of SO2 emissions differs from Galeras with its trend being consistently high. This is due to Popocatepetl being a lot more active than Galeras. Popocatepetl did have a bigger eruption specifically in 2013 which can explain the biggest spike in the data during that year. A volcano like Popocatepetl might be harder to predict bigger eruptions without outside data due to the constant activity. 
+
+Popocatepetl's Yearly trend of SO2 is as expected, just a lot of data around the same amount. Galera's and Popocatepetl total of SO2 throughout the six years differed by an order of magnitude with Popocatepetl being higher. Like previously mentioned this could be due to differences in amount of data or just due to Popocatepetl have more emissions. By just looking at all the graphs combined for both volcanos, Popocatepetl seems to have both more data and more total emissions compared to Galeras. 
+
+It's also interesting to know the total amount of SO2 that is being put out by Popocatepetl, this could be important in understand health risk in the surrounding cities in Mexico. SO2 is harmful to respiratory and lung functions therefore this secondary hazard of volcanic eruption is important to record and analyze.

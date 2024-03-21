@@ -135,3 +135,26 @@ arrayg2013 <- x2array[-rows_to_removeg2013]
 yarrayg2013 <- array2[-rows_to_removeg2013]
 arraysumg2013 <- sum(arrayg2013)
 ```
+
+
+# Sum of Total SO2 Emissions by Year for Galeras and Popocatepetl #
+
+```{r}
+galerastotalemissions <- array(data = c(arraysumg2008,arraysumg2009,arraysumg2010,arraysumg2011,arraysumg2012,arraysumg2013), dim= c(6,1))
+popocatepetltotalemissions <- array(data = c(arraysumpop2008,arraysumpop2009,arraysumpop2010,arraysumpop2011,arraysumpop2012,arraysumpop2013), dim= c(6,1))
+
+# Total Yearly SO2 Emissions Galeras vs Popcatepetl #
+```{r}
+arraysumgaleras <- sum(array4)
+arraysumpopocatepetl <- sum(x2array)
+print(arraysumgaleras)
+print(arraysumpopocatepetl)
+
+totalemissions <- array(data = c(arraysumgaleras, arraysumpopocatepetl), dim = c(2,2))
+
+
+
+ggplot() +
+   geom_point(aes(x = (2:2), y = totalemissions)) + labs(title="Galeras vs Popocatepetl Total SO2 6 Year Emissions", x = "Galeras (Below) vs Popocatepetl (Above)", y = "SO2 Flux (kg/s)") + scale_x_continuous(breaks= round(seq(min(0), max(2), by = 1))) + theme_bw() + geom_point(size = 7)
+```
+

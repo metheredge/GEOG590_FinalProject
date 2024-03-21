@@ -1,0 +1,91 @@
+## Load Packages ##
+```{r}
+library(ncdf4)
+library(ggplot2)
+library(gridExtra)
+library(maps)
+```
+
+# Read Data: Yearly SO2 Emissions for Galeras and Popocatepetl ##
+
+Open the Galeras NetCDF file
+
+```{r}
+ncfile <- nc_open("groundbased_novac.scandoas.so2_sgc013_galeras_20071114t000000z_20140329t000000z_001.nc")
+variable_data <- ncvar_get(ncfile, "SO2.FLUX_SCANNING.DOAS_DAILY.MEAN")
+DATETIME_data <- ncvar_get(ncfile, "DATETIME")
+```
+
+Open the Popcatepetl NetCDF file 
+
+```{r}
+ncfile <- nc_open("groundbased_novac.scandoas.so2_unam032_popocatepetl_20070412t000000z_20161228t000000z_001.nc")
+ 
+variable_data2 <- ncvar_get(ncfile, "SO2.FLUX_SCANNING.DOAS_DAILY.MEAN")
+DATETIME_data2 <- ncvar_get(ncfile, "DATETIME")
+```
+
+
+# Trim Data: 2008-2013 Yearly SO2 Emissions for Galeras and Popocatepetl #
+
+Get Galeras DATETIME variable into years.
+
+```{r}
+divide_array <- DATETIME_data / 365
+finaltime_array <- divide_array + 2000
+```
+
+Trim Galeras new variable years down to 2008-2013
+
+```{r}
+rows_to_remove3 <- c(698:704)
+x3array <- finaltime_array[-rows_to_remove3]
+array3 <- variable_data[-rows_to_remove3]
+
+rows_to_remove5 <- c(1:9)
+x4array <- x3array[-rows_to_remove5]
+array4 <- array3[-rows_to_remove5]
+```
+
+Get DATETIME Popcatepetl into Years
+```{r}
+divide_array2 <- DATETIME_data2 / 365
+finaltime_array2 <- divide_array2 + 2000
+```
+
+Trim Popcatepetl new variable years down to 2008-2013
+```{r}
+rows_to_remove <- c(1:151)
+array <- finaltime_array2[-rows_to_remove]
+xarray <- variable_data2[-rows_to_remove]
+
+rows_to_remove2 <- c(882:1057)
+array2 <- array[-rows_to_remove2]
+x2array <- xarray[-rows_to_remove2]
+```
+
+
+# Plot Mean Daily SO2 Emissions Galeras vs Popocatepetl
+```{r}
+ggplot() +
+  geom_line(aes(x = (x4array), y = array4)) + labs(title="Galeras Daily SO2 Measurements vs Date(Year)", x = "Date (Year)", y = "SO2 Flux (kg/s)") + scale_x_continuous(breaks= round(seq(min(2007), max(2015),by = 1)))
+ 
+ggplot() +
+    geom_line(aes(x = (array2), y = x2array)) + labs(title="Popocatepetl Daily SO2 Measurements vs Date(Year)", x = "Date (Year)", y = "SO2 Flux (kg/s)") + scale_x_continuous(breaks= round(seq(min(2007), max(2014), by = 1)))
+```
+
+# Plot Daily SO2 Emmisions Galeras vs Popocatepetl Side-by-side plots #
+```{r}
+plot1 <- ggplot() +
+  geom_line(aes(x = (x4array), y = array4)) + labs(title="Galeras Daily SO2 Measurements vs Date(Year)", x = "Date (Year)", y = "SO2 Flux (kg/s)") + scale_x_continuous(breaks= round(seq(min(2007), max(2015),by = 1)))
+plot2 <- ggplot() +
+    geom_line(aes(x = (array2), y = x2array)) + labs(title="Popocatepetl Daily SO2 Measurements vs Date(Year)", x = "Date (Year)", y = "SO2 Flux (kg/s)") + scale_x_continuous(breaks= round(seq(min(2007), max(2014), by = 1)))
+grid.arrange(plot1, plot2, ncol=2)
+```
+
+
+
+
+
+
+

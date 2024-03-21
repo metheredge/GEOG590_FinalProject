@@ -1,0 +1,137 @@
+# Popcatepetl Total SO2 Emmisions by Year #
+
+Get data seperated into years then add them together.
+
+2008
+```{r}
+rows_to_removepop2008 <- c(201:881)
+arraypop2008 <- x2array[-rows_to_removepop2008]
+yarraypop2008 <- array2[-rows_to_removepop2008]
+arraysumpop2008 <- sum(arraypop2008)
+
+```
+
+2009
+```{r}
+rows_to_removepop2009 <- c(371:881)
+arraypop2009 <- x2array[-rows_to_removepop2009]
+yarraypop2009 <- array2[-rows_to_removepop2009]
+rows_to_removepop2009p2 <- c(1:212)
+arraypop2009pt2 <- arraypop2009[-rows_to_removepop2009p2]
+yarraypop2009pt2 <- yarraypop2009[-rows_to_removepop2009p2]
+arraysumpop2009 <- sum(arraypop2009pt2)
+
+```
+
+2010
+
+```{r}
+rows_to_removepop2010 <- c(531:881)
+arraypop2010 <- x2array[-rows_to_removepop2010]
+yarraypop2010 <- array2[-rows_to_removepop2010]
+rows_to_removepop2010p2 <- c(1:381)
+arraypop2010pt2 <- arraypop2010[-rows_to_removepop2010p2]
+yarraypop2010pt2 <- yarraypop2010[-rows_to_removepop2010p2]
+arraysumpop2010 <- sum(arraypop2010pt2)
+
+```
+
+2011
+
+```{r}
+rows_to_removepop2011 <- c(706:881)
+arraypop2011 <- x2array[-rows_to_removepop2011]
+yarraypop2011 <- array2[-rows_to_removepop2011]
+rows_to_removepop2011p2 <- c(1:534)
+arraypop2011pt2 <- arraypop2011[-rows_to_removepop2011p2]
+yarraypop2011pt2 <- yarraypop2011[-rows_to_removepop2011p2]
+arraysumpop2011 <- sum(arraypop2011pt2)
+
+```
+
+2012
+```{r}
+rows_to_removepop2012 <- c(811:881)
+arraypop2012 <- x2array[-rows_to_removepop2012]
+yarraypop2012 <- array2[-rows_to_removepop2012]
+rows_to_removepop2012p2 <- c(1:711)
+arraypop2012pt2 <- arraypop2012[-rows_to_removepop2012p2]
+yarraypop2012pt2 <- yarraypop2012[-rows_to_removepop2012p2]
+arraysumpop2012 <- sum(arraypop2012pt2)
+
+```
+
+2013
+```{r}
+rows_to_removepop2013 <- c(1:821)
+arraypop2013 <- x2array[-rows_to_removepop2013]
+yarraypop2013 <- array2[-rows_to_removepop2013]
+arraysumpop2013 <- sum(arraypop2013)
+
+```
+
+# Total Galeras SO2 Emmisions by Year 
+Get data seperated into years then add them together.
+
+2008
+```{r}
+rows_to_removeg2008 <- c(191:704)
+arrayg2008 <- x4array[-rows_to_removeg2008]
+yarrayg2008 <- array4[-rows_to_removeg2008]
+arraysumg2008 <- sum(yarrayg2008)
+```
+
+
+2009
+```{r}
+rows_to_removeg2009 <- c(361:881)
+arrayg2009 <- x2array[-rows_to_removeg2009]
+yarrayg2009 <- array2[-rows_to_removeg2009]
+rows_to_removeg2009p2 <- c(1:212)
+arrayg2009pt2 <- arrayg2009[-rows_to_removeg2009p2]
+yarrayg2009pt2 <- yarrayg2009[-rows_to_removeg2009p2]
+arraysumg2009 <- sum(arrayg2009pt2)
+```
+
+2010
+```{r}
+rows_to_removeg2010 <- c(534:881)
+arrayg2010 <- x2array[-rows_to_removeg2010]
+yarrayg2010 <- array2[-rows_to_removeg2010]
+rows_to_removeg2010p2 <- c(1:375)
+arrayg2010pt2 <- arrayg2010[-rows_to_removeg2010p2]
+yarrayg2010pt2 <- yarrayg2010[-rows_to_removeg2010p2]
+arraysumg2010 <- sum(arrayg2010pt2)
+```
+
+
+2011
+```{r}
+rows_to_removeg2011 <- c(705:881)
+arrayg2011 <- x2array[-rows_to_removeg2011]
+yarrayg2011 <- array2[-rows_to_removeg2011]
+rows_to_removeg2011p2 <- c(1:534)
+arrayg2011pt2 <- arrayg2011[-rows_to_removeg2011p2]
+yarrayg2011pt2 <- yarrayg2011[-rows_to_removeg2011p2]
+arraysumg2011 <- sum(arrayg2011pt2)
+```
+
+2012
+```{r}
+rows_to_removeg2012 <- (811:881)
+arrayg2012 <- x2array[-rows_to_removeg2012]
+yarrayg2012 <- array2[-rows_to_removeg2012]
+rows_to_removeg2012p2 <- c(1:705)
+arrayg2012pt2 <- arrayg2012[-rows_to_removeg2012p2]
+yarrayg2012pt2 <- yarrayg2012[-rows_to_removeg2012p2]
+arraysumg2012 <- sum(arrayg2012pt2)
+```
+
+
+2013
+```{r}
+rows_to_removeg2013 <- c(1:811)
+arrayg2013 <- x2array[-rows_to_removeg2013]
+yarrayg2013 <- array2[-rows_to_removeg2013]
+arraysumg2013 <- sum(arrayg2013)
+```

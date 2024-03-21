@@ -1,0 +1,7 @@
+# Histogram of Galeras and Popocatepetl Data #
+```{r}
+Popocatepetl <- array2
+Galeras <- x4array
+hist(Popocatepetl, breaks=20)
+hist(Galeras, breaks=20)
+```

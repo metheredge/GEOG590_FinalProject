@@ -1,4 +1,4 @@
-# GEOG490_FinalProject: Galeras, Volcano and Popocatepetl, Volcano SO2 Emission Trends (2008-2013) 
+# GEOG590_FinalProject: Galeras, Volcano and Popocatepetl, Volcano SO2 Emission Trends (2008-2013) 
 
 SO2 gas emission measurements near volcanos can provide many understandings of volcanic eruptions and hazards. When recorded, the trends of these measurements can hold value in predicting future volcanic eruptions. Two volcanos that have many years of SO2 gas measurements is Galeras,Volcano in Colombia and Popocatepetl, Volcano in Mexico. Galeras and Popocatepetl are two extremely active volcanos that have many data to anaylze to provide much insight into SO2 trends of volcanos around the world. 
 
